@@ -1,0 +1,12 @@
+#header {
+    height: $header-height;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+        margin: 0;
+        font-size: 1em;
+        font-weight: 300
+    }
+}

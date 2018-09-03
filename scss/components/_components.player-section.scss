@@ -1,0 +1,18 @@
+.player-section {
+    .player-section-inner {
+        display: flex;
+        justify-content:space-evenly;
+        .card {
+            .svg-img {
+                height: 180px;
+            }
+        }
+        &.rotate-img {
+            .card {
+                .svg-img {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

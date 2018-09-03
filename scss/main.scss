@@ -1,0 +1,16 @@
+//sass --watch scss:css --style compressed
+@import 'settings/settings.variables';
+@import 'tools/tools.recycle';
+@import 'base/base.body';
+@import 'base/base.img';
+@import 'base/base.main';
+@import 'components/components.header';
+@import 'components/components.footer';
+@import 'components/components.loader';
+@import 'components/components.input';
+@import 'components/components.board';
+@import 'components/components.modal';
+@import 'components/components.player-section';
+@import 'helpers/helpers.margin-padding';
+@import 'helpers/helpers.visibility';
+@import 'helpers/helpers.text';

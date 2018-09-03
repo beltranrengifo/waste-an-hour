@@ -1,0 +1,32 @@
+body {
+    font-size: $base-size;
+    font-family: $ibm;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: $white;
+    &:after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: url(../img/paper-bg.jpg);
+        background-size: cover;
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        opacity: .4;    
+    }    
+    &.loading {
+        height: 100vh;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:767px) {}
