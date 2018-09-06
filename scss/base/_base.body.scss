@@ -18,6 +18,7 @@ body {
         z-index: -1;
         pointer-events: none;
         opacity: .4;    
+        @include transition(all .2s ease-in-out)
     }    
     &.loading {
         height: 100vh;

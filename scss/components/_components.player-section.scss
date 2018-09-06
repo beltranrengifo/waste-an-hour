@@ -1,16 +1,109 @@
 .player-section {
     .player-section-inner {
         display: flex;
-        justify-content:space-evenly;
+        justify-content: space-evenly;
+        height:40vh;
+        align-items: center;
         .card {
             .svg-img {
-                height: 180px;
+                svg {
+                    height: 180px;
+                    cursor: pointer;
+                    transform: scale(1);
+                    @include transition(all .15s ease-in-out);
+                    &:hover, &.active-svg {
+                        @extend %svg-shadow;
+                        transform: scale(1.25);
+                    }
+                    &#rock {
+                        &:hover,&.active-svg {
+                            g {
+                                path {
+                                    fill:$rock;
+                                }
+                            }
+                        }
+                    }
+
+                    &#paper {
+                        &:hover,&.active-svg {
+                            g {
+                                path {
+                                    fill:$paper;
+                                }
+                            }
+                        }
+                    }
+
+                    &#scissors {
+                        &:hover, &.active-svg{
+                            g {
+                                path {
+                                    fill:$scissors;
+                                }
+                            }
+                        }
+                    }
+
+                    &#lizard {
+                        &:hover,&.active-svg {
+                            g {
+                                path {
+                                    fill:$lizard;
+                                }
+                            }
+                        }
+                    }
+
+                    &#spock {
+                        &:hover,&.active-svg {
+                            g {
+                                path {
+                                    fill:$spock;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         &.rotate-img {
             .card {
                 .svg-img {
                     transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    &#computer-section {
+        .player-section-inner {
+            .card {
+                .svg-img {
+                    svg {
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.computer-mode {
+    .player-section {
+        .player-section-inner {
+            pointer-events: none;
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+    .player-section {
+        .player-section-inner {
+            .card {
+                .svg-img {
+                    svg {
+                        height: 120px;
+                    }
                 }
             }
         }

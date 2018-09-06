@@ -13,7 +13,6 @@
     background: $white;
     opacity: 1;
     visibility: visible;
-    @include transition(all .2s linear);
     .la-ball-clip-rotate {
         color: $accent;
     }

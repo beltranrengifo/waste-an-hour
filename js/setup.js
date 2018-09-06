@@ -1,6 +1,5 @@
 class Setup {
     constructor() {
-        this.challenge = ''
         this.buttons = []
         this.setupStep = 1
         this.gameConfig = {};
@@ -22,12 +21,12 @@ class Setup {
                 let playerNameInput = document.querySelector('.player-name-input')
                 this.gameConfig.playerName = playerNameInput.value
                 if (!/\S+/.test(this.gameConfig.playerName)) {
-                    playerNameInput.classList.add('no-validate')
+                    playerNameInput.closest('.modal-inner').classList.add('no-validate')
+                    playerNameInput.value = ''
+                    playerNameInput.placeholder = 'Enter your name!';
                 } else {
-                    document.getElementById('user').innerHTML = 'Hi <strong class="capitalize">' + this.gameConfig.playerName + '</strong>!'
                     this.selectChallenge()
                 }
-
             })
         })
     }
@@ -35,32 +34,32 @@ class Setup {
         this.buildModal('Select challenge', ['Normal Challenge', 'Extended Challenge'], false);
         this.buttons.forEach(e => {
             e.addEventListener('click', () => {
-                this.challenge = e.id
+                this.gameConfig.challenge = e.id
                 this.selectRounds()
             })
         })
     }
     selectRounds() {
         this.buildModal('Select number of rounds', ['Start game'], true, 'rounds');
+        let roundsInput = document.querySelector('.rounds');
+        roundsInput.type = 'number';
+        roundsInput.placeholder = 'Odd numbers from 3 to 15';
         this.buttons.forEach(e => {
             e.addEventListener('click', () => {
-                let roundsInput = document.querySelector('.rounds')
                 this.gameConfig.rounds = roundsInput.value
-                if (!/\d/.test(this.gameConfig.rounds)) {
-                    roundsInput.classList.add('no-validate')
+                if (!/\d/.test(this.gameConfig.rounds) 
+                || this.gameConfig.rounds < 3
+                || this.gameConfig.rounds > 15
+                || !( this.gameConfig.rounds & 1 )) {
+                    roundsInput.closest('.modal-inner').classList.add('no-validate')
+                    roundsInput.value = '';
+                    roundsInput.placeholder = 'Odd numbers from 3 to 15';
                 } else {
-                    document.getElementById('rounds').innerHTML = '<span class="rounds-number">' + this.gameConfig.rounds + '</span> rounds left.'
                     this.setupStep = 1;
                     this.createGame()
                 }
             })
         })
-    }
-    createGame() {
-        this.cleanModal()
-        this.gameConfig.setup = gameConfig[this.challenge]
-        this.hideModal()
-        new Game(this.gameConfig)
     }
     buildModal(title, buttons, input, inputClass) {
         document.querySelector('.modal-inner') ? this.cleanModal() : null;
@@ -87,12 +86,16 @@ class Setup {
         })
         this.buttons = [].slice.call(document.querySelectorAll('.modal-inner .modal-button'))
     }
-    cleanModal() {
-        document.querySelector('.modal-inner').remove()
+    cleanModal(hide) {
+        hide ? document.querySelector('#modal').classList.add('hidden-modal') : document.querySelector('.modal-inner').remove()
     }
-    hideModal() {
-        setTimeout(function () {
-            document.querySelector('#modal').classList.add('hidden-modal');
-        }, 400)
+    markDOM(){
+        document.querySelector('body').classList.add(`${this.gameConfig.challenge}-game`,`${this.gameConfig.mode}-mode` )
+    }
+    createGame() {
+        this.cleanModal(true)
+        this.gameConfig.setup = gameConfig[this.gameConfig.challenge];
+        this.markDOM()
+        new Game(this.gameConfig)
     }
 }

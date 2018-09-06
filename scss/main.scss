@@ -4,13 +4,14 @@
 @import 'base/base.body';
 @import 'base/base.img';
 @import 'base/base.main';
+@import 'base/base.input';
 @import 'components/components.header';
 @import 'components/components.footer';
 @import 'components/components.loader';
-@import 'components/components.input';
 @import 'components/components.board';
 @import 'components/components.modal';
 @import 'components/components.player-section';
+@import 'components/components.game-info';
+@import 'components/components.buttons';
 @import 'helpers/helpers.margin-padding';
-@import 'helpers/helpers.visibility';
-@import 'helpers/helpers.text';
+@import 'helpers/helpers.recycle';

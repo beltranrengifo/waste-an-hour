@@ -1,6 +1,14 @@
+.capitalize {
+    text-transform: capitalize;
+}
+
 .dom-loaded {
     opacity: 0!important;
     visibility: hidden!important;
     pointer-events: none!important;
     z-index: -99!important;
+}
+
+.prevent-click {
+    pointer-events: none !important;
 }

@@ -1,0 +1,19 @@
+input {
+    border: none;
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    padding: 0 10px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid $main;
+    margin-bottom: 20px;
+    color: $main;
+    text-align: center;
+    font-size: .9em;
+    font-weight: 300;
+    font-family: $ibm;
+    &:focus {
+        outline: none;
+    }
+}

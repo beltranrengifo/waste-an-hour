@@ -6,10 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Waste an hour having fun!</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/gameConfig.js"></script>
+    <script src="js/gameCards.js"></script>
     <script src="js/setup.js"></script>
     <script src="js/game.js"></script>
+    <script src="js/player.js"></script>
+    <script src="img/svg/cards.svg.js"></script>
     <script src="js/gameboard.js"></script>
     <script src="js/index.js"></script>
 </head>
@@ -21,17 +24,13 @@
     </div>
     <header id="header">
         <h1>Waste an hour having fun!</h1>
-        <div class="user-info">
-            <span id="user"></span>
-            <span id="rounds"></span>
-        </div>
     </header>
     <main>
         <div id="modal"></div>
         <div id="board">
-            <section id="player-up" class="player-section"></section>
-            <hr>
-            <section id="player-down" class="player-section"></section>
+            <section id="computer-section" class="player-section"></section>
+            <section id="game-info"></section>
+            <section id="user-section" class="player-section"></section>
         </div>
     </main>
     <footer id="footer"></footer>
