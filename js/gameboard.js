@@ -43,6 +43,12 @@ class Gameboard {
         scoreB.id = 'player-score';
         scoreB.classList.add('score');
         scoreB.innerText = this.game.player.score
+        let choiceA = document.createElement('span');
+        choiceA.id = 'computer-choice';
+        choiceA.classList.add('choice');
+        let choiceB = document.createElement('span');
+        choiceB.id = 'player-choice';
+        choiceB.classList.add('choice');
         let messages = document.createElement('div');
         messages.classList.add('game-messages')
         let roundsInfo = document.createElement('div');
@@ -51,6 +57,8 @@ class Gameboard {
         namesWrapper.appendChild(nameA)
         nameA.appendChild(scoreA)
         nameB.appendChild(scoreB)
+        nameA.appendChild(choiceA)
+        nameB.appendChild(choiceB)
         namesWrapper.appendChild(separator)
         namesWrapper.appendChild(nameB)
         infoWrapper.appendChild(namesWrapper)
@@ -69,9 +77,9 @@ class Gameboard {
         messageWrapper.innerHTML = message
     }
     reset() {
-        let resetImages = [].slice.call(document.querySelectorAll('svg'))
-        resetImages.forEach(e=>e.classList.remove('active-svg'))
-        document.querySelector('body').classList.remove('prevent-click')
+        [].slice.call(document.querySelectorAll('svg')).forEach(e=>e.classList.remove('active-svg'));
+        document.querySelector('body').classList.remove('prevent-click');
+        [].slice.call(document.querySelectorAll('.choice')).forEach(e=>e.innerText = '');
     }
     activateCard(event) {
         event.target.closest('.svg-img').children[0].classList.add('active-svg')
@@ -100,5 +108,10 @@ class Gameboard {
     }
     capitalizeString(string) {
         return string.replace(/^\w/, c => c.toUpperCase());
+    }
+    showChoice(string,element) {
+        let domEl = document.querySelector(`#${element}-choice`)
+        console.log(domEl,`#${element}-choice`)
+        domEl.innerText = this.capitalizeString(string)
     }
 }

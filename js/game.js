@@ -49,9 +49,11 @@ class Game {
         } else pickedCardId = this.computerChoice.id
         if(!this.pickedCards.length) { 
             this.pickedCards.push(pickedCardId)
+            this.gameboard.showChoice(pickedCardId,'player')
             this.autoSelectCard()
         } else {
             this.pickedCards.push(pickedCardId)
+            this.gameboard.showChoice(pickedCardId,'computer')
             this.resolveRound()
         }
     }

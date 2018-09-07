@@ -25,3 +25,10 @@
         }
     }
 }
+
+@media screen and (max-width:767px) {
+    #reload-button {
+        top: initial;
+        bottom: 20px;
+    }
+}

@@ -5,27 +5,48 @@
         padding: 20px;
         height: 10vh;
         align-items: center;
+
         .names-wrapper {
             .separator {
                 margin: 20px 0;
             }
+
             .score {
                 margin-left: 15px;
                 font-weight: 600;
             }
+            .choice {
+                margin-left: 50px;
+            }
         }
+
         .game-messages {
             text-align: center;
+
             i {
                 display: block;
                 font-size: 1.2em;
                 margin-top: 12px;
             }
+
             &.success {
                 border: 8px dotted $main;
                 padding: 20px;
-                animation: border-moving 1s ease-in-out infinite alternate;      
             }
         }
     }
+}
+
+@media screen and (max-width:767px) {
+    .game-info-inner {
+        flex-direction: column;
+        height: auto !important;
+        text-align: center;
+        .names-wrapper {
+            .separator {
+                margin: 10px 0 !important;
+            }
+        }
+    }
+    
 }
