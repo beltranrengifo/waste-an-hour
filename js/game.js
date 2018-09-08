@@ -1,5 +1,6 @@
 class Game {
     constructor(setup) {
+        console.log(setup)
         this.options = setup
         this.pickedCards = [];
         this.computerChoice;
