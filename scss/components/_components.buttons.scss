@@ -29,6 +29,14 @@
 @media screen and (max-width:767px) {
     #reload-button {
         top: initial;
-        bottom: 20px;
+        bottom: 10px;
+        right: 10px;
+        left: initial;
+        height: 30px;
+        width: 30px;
+        i {
+            line-height: 30px;
+            font-size: 1.1em;
+        }
     }
 }

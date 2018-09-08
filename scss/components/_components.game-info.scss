@@ -15,6 +15,7 @@
                 margin-left: 15px;
                 font-weight: 600;
             }
+
             .choice {
                 margin-left: 25px;
             }
@@ -38,15 +39,36 @@
 }
 
 @media screen and (max-width:767px) {
-    .game-info-inner {
-        flex-direction: column;
-        height: auto !important;
-        text-align: center;
-        .names-wrapper {
-            .separator {
-                margin: 10px 0 !important;
+    #game-info {
+        .game-info-inner {
+            font-size: .8em;
+            justify-content: center;
+
+            .names-wrapper {
+                .separator {
+                    display: none;
+                }
+                .player-name:nth-child(1),.player-name:nth-child(3) {
+                    left: 20px;
+                }
+                .player-name:nth-child(1) {
+                    top: 70px;
+                }
+
+                .player-name:nth-child(3) {
+                    bottom: 12px;
+                }
+            }
+
+            .rounds-info,
+            .player-name {
+                position: fixed;
+            }
+
+            .rounds-info {
+                top: 70px;
+                right: 10px;
             }
         }
     }
-    
 }

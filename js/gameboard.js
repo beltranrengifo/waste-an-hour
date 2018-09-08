@@ -111,7 +111,6 @@ class Gameboard {
     }
     showChoice(string,element) {
         let domEl = document.querySelector(`#${element}-choice`)
-        console.log(domEl,`#${element}-choice`)
         domEl.innerText = this.capitalizeString(string)
     }
 }
