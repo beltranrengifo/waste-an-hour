@@ -1,3 +1,10 @@
 #footer {
     height: $footer-height;
+    font-size: .7em;
+}
+
+@media screen and (max-width:767px) {
+    #footer {
+        display: none;
+    }
 }

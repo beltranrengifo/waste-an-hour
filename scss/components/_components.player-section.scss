@@ -96,6 +96,23 @@ body.computer-mode {
     }
 }
 
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .extended-game {
+        .player-section {
+            .player-section-inner {
+                flex-wrap: wrap;
+                .card {
+                    .svg-img {
+                        svg {
+                            width: 33vw;
+                            height: 120px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width:767px) {
     .player-section {
         .player-section-inner {
@@ -105,7 +122,6 @@ body.computer-mode {
                     svg {
                         height: 110px;
                         &:hover, &.active-svg {
-
                             transform: scale(1.05);
                         }
                     }
